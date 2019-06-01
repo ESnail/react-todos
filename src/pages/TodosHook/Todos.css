@@ -1,0 +1,231 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: '微软雅黑', Arial;
+  height: 100vh;
+  min-height: 300px;
+  background: linear-gradient(135deg, #8363a1 0%, #74a8c3 100%);
+}
+:root {
+  --border-color: hsla(0, 0%, 100%, .4);
+}
+ul {
+  list-style: none;
+}
+input {
+  padding: 5px;
+  border: 0;
+  outline: none;
+  background: transparent;
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+.ell {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.non {
+  display: none !important;
+}
+
+/* 滚动条整体部分，必须要设置 */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 0px;
+  background: #b0aeda;
+}
+/* 滚动条的轨道 */
+/* ::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, .3);
+} */
+/* 滚动条的滑块按钮 */
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #8363a1;
+}
+/* 滚动条的上下两端的按钮 */
+::-webkit-scrollbar-button {
+  height: 0px;
+  background-color: #b0aeda;
+}
+
+.container {
+  box-sizing: border-box;
+  display: flex;
+  padding: 10px 30px;
+  height: 100vh;
+  min-height: 300px;
+}
+.menu {
+  margin-right: 10px;
+  width: 270px;
+}
+.menu .list-new {
+  line-height: 30px;
+  color: hsla(0, 0%, 100%, .9);
+  cursor: pointer;
+}
+.menu .list-new:hover {
+  color: #fff;
+}
+.menu ul {
+  height: calc(100% - 30px);
+  overflow: auto;
+}
+.menu ul > li {
+  position: relative;
+  padding: 0 25px 0 10px;
+  line-height: 30px;
+  text-align: left;
+  font-size: 12px;
+  color: hsla(0, 0%, 100%, .7);
+  border-top: 1px solid var(--border-color, hsla(0, 0%, 100%, .4));
+  cursor: pointer;
+  transition: .1s ease;
+}
+.menu ul > li:last-child {
+  border-bottom: 1px solid var(--border-color, hsla(0, 0%, 100%, .4));
+}
+.menu ul > li:hover {
+  color: #fff;
+}
+.menu ul > li::after {
+  content: attr(data-todos);
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  padding: 0 5px;
+  min-width: 10px;
+  height: 20px;
+  border-radius: 20px;
+  text-align: center;
+  line-height: 20px;
+  color: currentColor;
+  background: rgba(0, 0, 0, .2);
+}
+.menu ul > li.active {
+  color: #fff;
+  background: linear-gradient(hsla(0, 0%, 100%, .1), transparent, hsla(0, 0%, 100%, .1));
+}
+.menu ul > li.enter {
+  animation: enter linear 0.3s;
+}
+.menu ul > li.leave {
+  animation: leave linear 0.3s;
+}
+@keyframes enter {
+  from {
+    transform: translateX(60px);
+    /* width: 330px; */
+    opacity: .5;
+  }
+}
+@keyframes leave {
+  to {
+    transform: translateX(60px);
+    /* width: 330px; */
+    opacity: 0;
+  }
+}
+
+.main {
+  flex: 1;
+  background: rgba(255, 255, 255, .5);
+}
+.main .header {
+  padding: 10px;
+  background: linear-gradient(180deg,#d0edf5,#e1e5f0);
+}
+.main .header .title {
+  display: flex;
+}
+.main .header .title > h3 {
+  flex: 1;
+  width: 0;
+  color: #333;
+  cursor: pointer;
+}
+.main .header .title > h3 > span {
+  vertical-align: middle;
+}
+.main .header .title > h3 > span:first-child {
+  transform: rotate(90deg);
+  color: rgba(0, 0, 0, .5);
+  font-size: 14px;
+}
+.main .header .title > h3 > span:not(:first-child) {
+  box-sizing: border-box;
+  position: relative;
+  padding-right: 25px;
+  display: inline-block;
+  width: calc(100% - 20px);
+}
+.main .header .title > h3 > span:not(:first-child)::after {
+  content: attr(data-todos);
+  position: absolute;
+  top: 2px;
+  right: 5px;
+  padding: 0 5px;
+  min-width: 10px;
+  height: 20px;
+  border-radius: 20px;
+  text-align: center;
+  line-height: 20px;
+  color: hsla(0, 0%, 100%, .8);
+  font-size: 12px;
+  background: #74a8c3;
+}
+.main .header .title > span {
+  cursor: pointer;
+}
+.main .header .title > span:hover {
+  border-radius: 50%;
+  background: linear-gradient(#5dbdd8, transparent);
+}
+.main .header .title > input {
+  width: 100%;
+}
+.main .header > p {
+  line-height: 30px;
+}
+.main .header > p > input {
+  width: calc(100% - 40px);
+}
+.main ul {
+  height: calc(100% - 90px);
+  overflow: auto;
+  color: #333;
+  font-size: 12px;
+  line-height: 22px;
+}
+.main ul > li {
+  display: flex;
+  padding: 10px;
+}
+.main ul > li:nth-of-type(odd) {
+  background: linear-gradient(hsla(0, 0%, 100%, .2), transparent, hsla(0, 0%, 100%, .2));;
+}
+.main ul > li .con {
+  flex: 1;
+  margin: 0 10px;
+  width: 0;
+}
+.main ul > li .op {
+  font-size: 14px;
+  cursor: pointer;
+}
+.main ul > li .del-item {
+  cursor: pointer;
+}
+.main ul > li.todo .op {
+  color: red;
+}
+.main ul > li.done .op {
+  color: green;
+}
+.main ul > li.done .con {
+  color: #888;
+  text-decoration: line-through;
+}
