@@ -3,8 +3,10 @@
 
 ## react-hook 实现：
 - 主要用到了 useState 和 useEffect
-- [在线 demo]()
-- 效果图
+- [在线 demo](https://esnail.github.io/react-todos/build/index.html#/todos-hook)
+- 效果图：
+
+![react-hooks-todos](https://github.com/ESnail/react-todos/blob/master/screenshot/react-hook-todos.png?raw=true)
 
 ## + Eslint
 
