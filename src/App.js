@@ -1,6 +1,7 @@
 import React from 'react';
 import { HashRouter as Router, Route, Link } from 'react-router-dom'
 import Todos from './pages/TodosHook/Todos.js'
+import TsTodos from './pages/TsTodosHook/Todos.tsx'
 
 import logo from './logo.svg';
 import './App.css';
@@ -23,6 +24,7 @@ function Index () {
               </a>
 
               <Link className="App-link" to="/todos-hook">todos-hook</Link>
+              <Link className="App-link" to="/ts-todos-hook">ts-todos-hook</Link>
           </header>
       </div>
     )
@@ -37,6 +39,7 @@ function App() {
       <Router>
           <Route path="/" exact component={ Index } />
           <Route path="/todos-hook" component={ Todos } />
+          <Route path="/ts-todos-hook" component={ TsTodos }/>
       </Router>
       
   );

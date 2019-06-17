@@ -5,6 +5,8 @@
   "dependencies": {
     "@babel/core": "7.4.3",
     "@svgr/webpack": "4.1.0",
+    "@types/react": "^16.8.20",
+    "@types/react-dom": "^16.8.4",
     "@typescript-eslint/eslint-plugin": "1.6.0",
     "@typescript-eslint/parser": "1.6.0",
     "babel-jest": "^24.8.0",
@@ -57,7 +59,7 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
-    "lint-fix": "eslint --fix --ext .js src"
+    "lint-fix": "eslint --fix --ext .js,.tsx src"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -75,12 +77,15 @@
     ]
   },
   "devDependencies": {
+    "awesome-typescript-loader": "^5.2.1",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
     "eslint": "^5.16.0",
     "eslint-loader": "^2.1.2",
     "eslint-plugin-react": "^7.12.4",
-    "eslint-plugin-react-hooks": "^1.6.0"
+    "eslint-plugin-react-hooks": "^1.6.0",
+    "source-map-loader": "^0.2.4",
+    "typescript": "^3.5.2"
   },
   "jest": {
     "collectCoverageFrom": [

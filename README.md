@@ -3,7 +3,8 @@
 
 ## react-hook 实现：
 - 主要用到了 useState 和 useEffect
-- [在线 demo](https://esnail.github.io/react-todos/build/index.html#/todos-hook)
+- [在线 todos-hook demo](https://esnail.github.io/react-todos/build/index.html#/todos-hook)
+- [在线 ts-todos-hook demo](https://esnail.github.io/react-todos/build/index.html#/ts-todos-hook)
 - 效果图：
 
 ![react-hooks-todos](https://github.com/ESnail/react-todos/blob/master/screenshot/react-hook-todos.png?raw=true)
@@ -67,6 +68,27 @@
     "react-hooks/rules-of-hooks": "error", // 检查 Hook 的规则
     "react-hooks/exhaustive-deps": "warn" // 检查 effect 的依赖
   }
+}
+```
+
+## + Typscript
+
+- `npm install --save @types/react @types/react-dom`
+- `npm install --save-dev typescript awesome-typescript-loader source-map-loader`
+- 增加 tsconfig.json
+```
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "module": "commonjs",
+    "target": "es5",
+    "jsx": "react"
+  },
+  "include": [
+    "./src/**/*"
+  ]
 }
 ```
 
